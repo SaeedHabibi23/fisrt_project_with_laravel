@@ -11,6 +11,7 @@
     
     <a href="/" class="btn btn-danger"> Welcome </a>
     <h1> About US </h1>
+    <h1> Contact US </h1>
 
 </body>
 </html>
