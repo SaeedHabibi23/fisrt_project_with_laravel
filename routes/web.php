@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('/aboutUs', function () {
-    return view('aboutUs');
-});
+Route::get('/showDoctor', [DoctorController::class , 'show']);
+Route::get('/addDoctor', [DoctorController::class , 'add']);

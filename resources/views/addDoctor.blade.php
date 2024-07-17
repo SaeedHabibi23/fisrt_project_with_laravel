@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 </head>
 <body>
-    
-    <a href="/" class="btn btn-danger"> Welcome </a>
-    <h1> About US </h1>
-    <h1> Contact US </h1>
+    add doctor
 </body>
 </html>

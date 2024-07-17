@@ -10,7 +10,8 @@
 </head>
 <body>
 
-    <a href="aboutUs" class="btn btn-primary"> About Us </a>
+    <a href="showDoctor" class="btn btn-primary"> Show Doctor</a>
+    <a href="addDoctor" class="btn btn-primary"> add Doctor</a>
 
     <h1> Hello World </h1>
 
