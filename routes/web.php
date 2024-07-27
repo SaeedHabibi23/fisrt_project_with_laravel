@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\Calculate;
+use App\Http\Controllers\patientController;
+use App\Http\Controllers\admincontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +17,22 @@ use App\Http\Controllers\DoctorController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/',[DoctorController::class , 'welcome']);
+
+Route::get('/aboutsUs', function () {
     return view('welcome');
 });
 
 
+
+
+
 Route::get('/showDoctor', [DoctorController::class , 'show']);
 Route::get('/addDoctor', [DoctorController::class , 'add']);
+
+Route::get('/calculate', [Calculate::class , 'show']);
+Route::get('/showPatient', [patientController::class , 'showPatient']);
+
+
+
+Route::get('/admin', [admincontroller::class , 'admin']);
