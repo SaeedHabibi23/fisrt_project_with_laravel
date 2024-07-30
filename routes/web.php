@@ -27,8 +27,11 @@ Route::get('/aboutsUs', function () {
 
 
 
-Route::get('/showDoctor', [DoctorController::class , 'show']);
+Route::get('/showDoctors', [DoctorController::class , 'show']);
 Route::get('/addDoctor', [DoctorController::class , 'add']);
+
+
+
 
 Route::get('/calculate', [Calculate::class , 'show']);
 Route::get('/showPatient', [patientController::class , 'showPatient']);
