@@ -3,16 +3,56 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Doctor;
 
 class DoctorController extends Controller
 {
     public function show(){
-        return view('admin.doctors.show');
+        $doctors = Doctor::all();
+        return view('admin.doctors.show', compact('doctors'));
     }
   
-    public function add(){
-        return view('addDoctor');
+    public function addDoctor(){
+        return view('admin.doctors.add');
     }
+
+    public function storeDoctor(Request $request){
+        $name = $request->name;
+        $last_name = $request->last_name;
+        $phone_number = $request->phone_number;
+        $address = $request->address;
+        $age = $request->age;
+        $date_employed = $request->date_employed;
+        $gender = $request->gender;
+
+        // dd(
+        //     $name,
+        //     $last_name,
+        //     $phone_number,
+        //     $address,
+        //     $age,
+        //     $date_employed,
+        //     $gender
+        // );
+
+        $doctor = new Doctor();
+        $doctor->date_employed	 = $date_employed;
+        $doctor->name = $name;
+        $doctor->last_name = $last_name;
+        $doctor->phone_number = $phone_number;
+        $doctor->Address = $address;
+        $doctor->age = $age;
+        $doctor->gender = $gender;
+        $doctor->save();
+
+        $doctors = Doctor::all();
+        return view('admin.doctors.show', compact('doctors'));
+
+
+    }
+
+
+
     public function welcome(){
         $categories = [
             [

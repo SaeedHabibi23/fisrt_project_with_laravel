@@ -28,7 +28,8 @@ Route::get('/aboutsUs', function () {
 
 
 Route::get('/showDoctors', [DoctorController::class , 'show']);
-Route::get('/addDoctor', [DoctorController::class , 'add']);
+Route::get('/addDoctor', [DoctorController::class , 'addDoctor']);
+Route::post('/storeDoctor', [DoctorController::class , 'storeDoctor']);
 
 
 
