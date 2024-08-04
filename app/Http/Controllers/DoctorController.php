@@ -24,17 +24,7 @@ class DoctorController extends Controller
         $age = $request->age;
         $date_employed = $request->date_employed;
         $gender = $request->gender;
-
-        // dd(
-        //     $name,
-        //     $last_name,
-        //     $phone_number,
-        //     $address,
-        //     $age,
-        //     $date_employed,
-        //     $gender
-        // );
-
+  
         $doctor = new Doctor();
         $doctor->date_employed	 = $date_employed;
         $doctor->name = $name;
@@ -48,8 +38,25 @@ class DoctorController extends Controller
         $doctors = Doctor::all();
         return view('admin.doctors.show', compact('doctors'));
 
-
     }
+
+    public function doctorDelete($id){
+        $doctor = Doctor::find($id);
+        $doctor->delete();
+        $doctors = Doctor::all();
+        return view('admin.doctors.show', compact('doctors'));
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

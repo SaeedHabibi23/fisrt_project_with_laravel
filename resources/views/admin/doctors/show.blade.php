@@ -37,6 +37,7 @@
                                         <th class="text-right">Age</th>
                                         <th class="text-center">Date Employed</th>
                                         <th class="text-center">Gender</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -53,7 +54,10 @@
                                         <td class="text-nowrap">{{$doctor->date_employed}}</td>
                                         <td class="text-nowrap">{{$doctor->gender}}</td>
                                        
-                                        <td class="text-center"> <span class="badge badge-pill bg-success inv-badge">INACTIVE</span> </td>
+                                        <td class="text-center">
+                                            <a href="" class="btn btn-success">Edit</a>
+                                            <a href="doctorDelete/{{$doctor->id}}" class="btn btn-danger">Delete</a>
+                                        </td>
                                     </tr>
                                     @endforeach
 
