@@ -104,6 +104,14 @@
 							</ul>
 						</li>
 				 
+					 
+						<li class="submenu"> <a href=""><i class="fas fa-user"></i> <span> Patients </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" style="display: none;">
+								<li><a href="showPatients"> All patients </a></li>
+								<li><a href="edit-customer.html"> Add patient </a></li>
+							</ul>
+						</li>
+				 
 					</ul>
 				</div>
 			</div>

@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-12 mt-5">
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item active">All Doctors</li>
+                        <li class="breadcrumb-item active">All Patients</li>
                     </ul>
                 </div>
             </div>
@@ -19,9 +19,9 @@
             <div class="col-md-12 d-flex">
                 <div class="card card-table flex-fill">
                     <div class="card-header">
-                        <h4 class="card-title float-left mt-2">Doctors</h4>
-                        <a href="addDoctor">
-                        <button type="button" class="btn btn-primary float-right veiwbutton">Add Doctor</button>
+                        <h4 class="card-title float-left mt-2">Patients</h4>
+                        <a href="addPatient">
+                        <button type="button" class="btn btn-primary float-right veiwbutton">Add Patient</button>
                     </a>
                     </div>
                     <div class="card-body">
@@ -29,34 +29,33 @@
                             <table class="table table-hover table-center">
                                 <thead>
                                     <tr>
-                                        <th>Doctor ID</th>
+                                        <th>Patient ID</th>
                                         <th>Name</th>
                                         <th class="text-center">Last Name</th>
                                         <th>Phone Number</th>
-                                        <th>Address</th>
                                         <th class="text-right">Age</th>
-                                        <th class="text-center">Date Employed</th>
-                                        <th class="text-center">Gender</th>
+                                        <th class="text-center">In Date</th>
+                                        <th class="text-center">Doctor Name</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($doctors as $doctor)
+                                    @foreach($patients as $patient)
                                     <tr>
                                         <td class="text-nowrap">
-                                            <div>{{$doctor->id}}</div>
+                                            <div>{{$patient->id}}</div>
                                         </td>
-                                        <td class="text-nowrap">{{$doctor->name}}</td>
-                                        <td class="text-nowrap">{{$doctor->last_name}}</td>
-                                        <td class="text-nowrap">{{$doctor->phone_number}}</td>
-                                        <td class="text-nowrap">{{$doctor->Address}}</td>
-                                        <td class="text-nowrap">{{$doctor->age}}</td>
-                                        <td class="text-nowrap">{{$doctor->date_employed}}</td>
-                                        <td class="text-nowrap">{{$doctor->gender}}</td>
+
+                                        <td class="text-nowrap">{{$patient->name}}</td>
+                                        <td class="text-nowrap">{{$patient->last_name}}</td>
+                                        <td class="text-nowrap">{{$patient->phone_number}}</td>
+                                        <td class="text-nowrap">{{$patient->age}}</td>
+                                        <td class="text-nowrap">{{$patient->in_date}}</td>
+                                        <td class="text-nowrap">{{$patient->doctor_name}}</td>
                                        
                                         <td class="text-center">
-                                            <a href="doctorEdit/{{$doctor->id}}" class="btn btn-success">Edit</a>
-                                            <a href="doctorDelete/{{$doctor->id}}" class="btn btn-danger">Delete</a>
+                                            <a href="patientEdit/{{$patient->id}}" class="btn btn-success">Edit</a>
+                                            <a href="patientDelete/{{$patient->id}}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach

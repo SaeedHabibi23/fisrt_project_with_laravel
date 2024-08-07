@@ -23,11 +23,6 @@ return new class extends Migration
             $table->foreign('doctor_id')->references('id')->on('doctors')
             ->onDelete('No Action')->onUpdate('cascade');
 
-            $table->unsignedBigInteger('room_id')->nullable();
-            $table->foreign('room_id')->references('id')->on('rooms')
-            ->onDelete('No Action')->onUpdate('cascade');
-            
-
 
             $table->timestamps();
         });

@@ -48,6 +48,36 @@ class DoctorController extends Controller
     }
 
 
+    public function doctorEdit($id){
+        $doctor = Doctor::find($id);
+        return view('admin.doctors.edit', compact('doctor'));
+    }
+
+    public function updateDoctor(Request $request){
+        $name = $request->name;
+        $last_name = $request->last_name;
+        $phone_number = $request->phone_number;
+        $address = $request->address;
+        $age = $request->age;
+        $date_employed = $request->date_employed;
+        $gender = $request->gender;
+  
+        $doctor = Doctor::find($request->id);
+        $doctor->date_employed	 = $date_employed;
+        $doctor->name = $name;
+        $doctor->last_name = $last_name;
+        $doctor->phone_number = $phone_number;
+        $doctor->Address = $address;
+        $doctor->age = $age;
+        $doctor->gender = $gender;
+        $doctor->save();
+
+        $doctors = Doctor::all();
+        return view('admin.doctors.show', compact('doctors'));
+
+    }
+
+
 
 
 

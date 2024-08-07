@@ -31,12 +31,18 @@ Route::get('/showDoctors', [DoctorController::class , 'show']);
 Route::get('/addDoctor', [DoctorController::class , 'addDoctor']);
 Route::post('/storeDoctor', [DoctorController::class , 'storeDoctor']);
 Route::get('/doctorDelete/{id}', [DoctorController::class , 'doctorDelete']);
+Route::get('/doctorEdit/{id}', [DoctorController::class , 'doctorEdit']);
+Route::post('/updateDoctor', [DoctorController::class , 'updateDoctor']);
 
 
+
+// These Codes related to the patients
+Route::get('/showPatients', [patientController::class , 'showPatients']);
+Route::get('/addPatient', [patientController::class , 'addPatient']);
+Route::post('/storePatient', [patientController::class , 'storePatient']);
 
 
 Route::get('/calculate', [Calculate::class , 'show']);
-Route::get('/showPatient', [patientController::class , 'showPatient']);
 
 
 

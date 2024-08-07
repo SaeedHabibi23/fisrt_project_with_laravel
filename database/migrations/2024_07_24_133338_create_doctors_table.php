@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('Address', 256);
             $table->string('phone_number');
             $table->string('last_name');
+            $table->string('gender');
             $table->integer('age')->nullable();
             $table->date('date_employed');
             $table->timestamps();
