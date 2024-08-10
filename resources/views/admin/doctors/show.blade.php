@@ -41,10 +41,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php  
+                                        $counter = 0;
+                                    ?>
                                     @foreach($doctors as $doctor)
                                     <tr>
                                         <td class="text-nowrap">
-                                            <div>{{$doctor->id}}</div>
+                                            <div>{{++$counter}}</div>
                                         </td>
                                         <td class="text-nowrap">{{$doctor->name}}</td>
                                         <td class="text-nowrap">{{$doctor->last_name}}</td>

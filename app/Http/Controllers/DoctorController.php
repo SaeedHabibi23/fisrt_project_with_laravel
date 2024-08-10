@@ -35,8 +35,7 @@ class DoctorController extends Controller
         $doctor->gender = $gender;
         $doctor->save();
 
-        $doctors = Doctor::all();
-        return view('admin.doctors.show', compact('doctors'));
+        return redirect()->route('showDoctors');
 
     }
 

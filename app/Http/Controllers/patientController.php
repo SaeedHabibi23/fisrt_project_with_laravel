@@ -5,18 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Doctor;
+use App\Models\Room;
 
 class patientController extends Controller
 {
    
     public function showPatients(){
         $patients = Patient::leftjoin('doctors', 'doctors.id' , 'patients.doctor_id')
-        ->select('patients.*', 'doctors.name as doctor_name')->get();
+        ->leftjoin('rooms' , 'rooms.id', 'patients.room_id')
+        ->select('patients.*', 'doctors.name as doctor_name' , 'rooms.number as room_number')->get();
         return view('admin.patients.show', compact('patients'));
     }
     public function addPatient(){
         $Alldoctors = Doctor::all();
-        return view('admin.patients.add', compact('Alldoctors'));
+        $Rooms = Room::all();
+        return view('admin.patients.add', compact('Alldoctors' , 'Rooms'));
     }
 
     public function storePatient(Request $request){
@@ -26,6 +29,7 @@ class patientController extends Controller
         $age = $request->age;
         $in_date = $request->in_date;
         $doctor_id = $request->doctor_id;
+        $room_id = $request->room_id;
 
 
         $patient = new Patient();
@@ -35,11 +39,18 @@ class patientController extends Controller
         $patient->age = $age;
         $patient->in_date = $in_date;
         $patient->doctor_id = $doctor_id;
+        $patient->room_id = $room_id;
         $patient->save();
 
-        $patients = Patient::all();
-        return view('admin.patients.show', compact('patients'));
+        return redirect()->route('showPatients');
 
+    }
+
+    public function patientEdit($id){
+        $patient = Patient::find($id);
+        $Alldoctors = Doctor::all();
+        $Rooms = Room::all();
+        return view('admin.patients.edit', compact('Alldoctors' , 'Rooms' , 'patient'));
     }
         
 }

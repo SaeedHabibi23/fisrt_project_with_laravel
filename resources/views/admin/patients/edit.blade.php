@@ -22,12 +22,12 @@
     <h4 class="card-title">Basic Inputs</h4>
     </div>
     <div class="card-body">
-    <form action="storePatient" method="post">
+    <form action="{{route('storePatient')}}" method="post">
         @csrf
     <div class="form-group row">
-    <label class="col-form-label col-md-2"> Name </label>
+    <label class="col-form-label col-md-2" > Name </label>
     <div class="col-md-10">
-    <input type="text" class="form-control"  name="name">
+    <input type="text" class="form-control" value="{{$patient->name}}"  name="name">
     </div>
     </div>
     <div class="form-group row">
@@ -61,7 +61,8 @@
         <div class="col-md-10">
          <select name="doctor_id" class="form-control" id="">
             @foreach($Alldoctors as $doctor)
-            <option value="{{$doctor->id}}"> {{$doctor->name}} </option>
+            <option value="{{$doctor->id}}" @if($doctor->id == $patient->doctor_id) selected   @endif
+                > {{$doctor->name}} </option>
             @endforeach
          </select>
         </div>
@@ -71,7 +72,8 @@
         <div class="col-md-10">
          <select name="room_id" class="form-control" id="">
             @foreach($Rooms as $Room)
-            <option value="{{$Room->id}}"> {{$Room->number}} </option>
+            <option value="{{$Room->id}}" @if($Room->id == $patient->room_id)selected  @endif
+                > {{$Room->number}} </option>
             @endforeach
          </select>
         </div>

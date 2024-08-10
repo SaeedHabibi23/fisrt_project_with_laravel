@@ -36,6 +36,7 @@
                                         <th class="text-right">Age</th>
                                         <th class="text-center">In Date</th>
                                         <th class="text-center">Doctor Name</th>
+                                        <th class="text-center">Room Number</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -52,6 +53,7 @@
                                         <td class="text-nowrap">{{$patient->age}}</td>
                                         <td class="text-nowrap">{{$patient->in_date}}</td>
                                         <td class="text-nowrap">{{$patient->doctor_name}}</td>
+                                        <td class="text-nowrap">{{$patient->room_number}}</td>
                                        
                                         <td class="text-center">
                                             <a href="patientEdit/{{$patient->id}}" class="btn btn-success">Edit</a>

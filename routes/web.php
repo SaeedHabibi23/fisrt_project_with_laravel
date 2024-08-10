@@ -27,7 +27,7 @@ Route::get('/aboutsUs', function () {
 
 
 
-Route::get('/showDoctors', [DoctorController::class , 'show']);
+Route::get('/showDoctors', [DoctorController::class , 'show'])->name('showDoctors');
 Route::get('/addDoctor', [DoctorController::class , 'addDoctor']);
 Route::post('/storeDoctor', [DoctorController::class , 'storeDoctor']);
 Route::get('/doctorDelete/{id}', [DoctorController::class , 'doctorDelete']);
@@ -37,9 +37,10 @@ Route::post('/updateDoctor', [DoctorController::class , 'updateDoctor']);
 
 
 // These Codes related to the patients
-Route::get('/showPatients', [patientController::class , 'showPatients']);
+Route::get('/showPatients', [patientController::class , 'showPatients'])->name('showPatients');
 Route::get('/addPatient', [patientController::class , 'addPatient']);
 Route::post('/storePatient', [patientController::class , 'storePatient']);
+Route::get('/patientEdit/{id}', [patientController::class , 'patientEdit']);
 
 
 Route::get('/calculate', [Calculate::class , 'show']);

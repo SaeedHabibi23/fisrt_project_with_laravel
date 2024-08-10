@@ -99,7 +99,7 @@
 					 
 						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Doctors </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="showDoctors"> All Doctors </a></li>
+								<li><a href="{{route('showDoctors')}}"> All Doctors </a></li>
 								<li><a href="edit-customer.html"> Add Doctor </a></li>
 							</ul>
 						</li>
