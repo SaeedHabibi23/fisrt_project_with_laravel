@@ -35,7 +35,7 @@ class DoctorController extends Controller
         $doctor->gender = $gender;
         $doctor->save();
 
-        return redirect()->route('showDoctors');
+        return redirect()->route('showDoctors')->with('status' , 'Doctor Added Successfully!!');
 
     }
 
