@@ -47,4 +47,8 @@ Route::get('/calculate', [Calculate::class , 'show']);
 
 
 
+
+Auth::routes();
+
 Route::get('/admin', [admincontroller::class , 'admin']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

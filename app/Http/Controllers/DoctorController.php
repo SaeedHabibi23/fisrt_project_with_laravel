@@ -8,7 +8,7 @@ use App\Models\Doctor;
 class DoctorController extends Controller
 {
     public function show(){
-        $doctors = Doctor::all();
+        $doctors = Doctor::paginate(1);
         return view('admin.doctors.show', compact('doctors'));
     }
   
